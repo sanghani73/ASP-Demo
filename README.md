@@ -82,5 +82,9 @@ You can run the [create_customerVehicles.py](./dataLoaders/create_customerVehicl
 
 ### Verifying the Results
 
-As you run each of the scripts, open up [MongoDB Compass](https://www.mongodb.com/products/tools/compass) and monitor the target collection. You should see the customer details being enriched as each script is run. Additionally, if you have also configured the kaka connection then you should also see the messages being sent to the kafka topic.
+As you run each of the scripts, open up [MongoDB Compass](https://www.mongodb.com/products/tools/compass) and monitor the target collection. You should see the customer details being enriched as each script is run. The image below depicts an example:
+
+![ASPDemo Architecture](ASPDemoResults.jpg)
+
+ Additionally, if you have also configured the kaka connection then you should also see the messages being sent to the kafka topic.
 
