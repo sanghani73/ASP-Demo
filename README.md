@@ -52,13 +52,23 @@ Note for the Sink Processors in this demo I've created two connections in the re
 
 If you create connections with different names, make sure you modify the stream processor files accordingly.
 
-Make sure you have [mongosh](https://www.mongodb.com/docs/mongodb-shell/) installed and have updated the connection details in the [mongodb.properties](./streamProcessors/mongodb.properties) file accordingly.
+Make sure you have [mongosh](https://www.mongodb.com/docs/mongodb-shell/) installed and have updated the connection details in the [mongodb.properties](./streamProcessors/mongoShellExamples/mongodb.properties) file accordingly.
 
 To install all the stream processors, run the ```load_all_stream_processors.sh``` script.
 
 If you want to re-deploy the configuration of a single stream proessor you can use the following command:
 
     mongosh mongodb://<username>:<password>@<atlas-stream-processor-connection>/ --tls --file <fileName>
+
+#### Using the MongoDB Atlas Rest API
+
+This repo also contains some examples that demonstrate how you can use the Atlas API to create a streams processing workspace, add connections to it and create streams processors. The [restAPIExamples](./streamProcessors/restAPIExamples/) directory contains a number of python scripts that should help you get started via the API if that is your preference over the shell (note you can also use the [Atlas CLI](https://www.mongodb.com/docs/atlas/cli/current/) or the [terraform provider](https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs) to create and manage your stream processors).
+
+To run the examples, modify the [config.ini](./streamProcessors/restAPIExamples/config.ini) to set the relevant properties. 
+
+The [createWorkspace.py](./streamProcessors/restAPIExamples/createWorkspace.py) will create a new workspace in the project and configure a database connection (make sure you update the configuration defined in `DB_CONNECTION_DEFINITION` to reflect your cluster names).
+
+The [createCustomersASP.py](./streamProcessors/restAPIExamples/createCustomersASP.py) gives you an example of how you can configure your processor and deploy it via the API.
 
 ## Run the Demo
 

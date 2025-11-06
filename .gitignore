@@ -1,2 +1,4 @@
 dataLoaders/anand_copy.ini
 streamProcessors/anand_mongodb.properties
+streamProcessors/mongoShellExamples/anand_mongodb.properties
+streamProcessors/restAPIExamples/anand_config.ini
